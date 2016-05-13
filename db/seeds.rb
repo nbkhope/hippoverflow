@@ -8,6 +8,8 @@ end
 User.delete_all
 Question.delete_all
 Answer.delete_all
+Comment.delete_all
+Vote.delete_all
 
 # Create users
 40.times do
@@ -64,6 +66,8 @@ end
 	comment.user_id = User.all.sample.id
 	comment.entry_id = Question.all.sample.id
 	comment.entry_type = "Q"
+
+	comment.save
 end
 
 # Generate fake comments to answers
@@ -75,4 +79,18 @@ end
 	comment.user = User.all.sample
 	comment.entry = Answer.all.sample
 	comment.entry_type = "A"
+
+	comment.save
+end
+
+# Generate fake votes
+160.times do
+	vote = Vote.new(
+		reaction: [1, -1].sample
+	)
+
+	vote.user = User.all.sample
+	vote.entry = [Question.all.sample, Answer.all.sample].sample
+
+	vote.save
 end
