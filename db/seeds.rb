@@ -1,3 +1,5 @@
+require 'faker'
+
 def get_random_content_array
 	[
 		Faker::Lorem.paragraph,
