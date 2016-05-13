@@ -1,28 +1,9 @@
 <h1><%= @question.title %></h1>
-
-
 <div><%= @question.content %></div>
 <div><%= @question.author %></div>
 
+<%= erb :'comments/qshow'%>
+<%= erb :'answers/show'%>
+<%= erb :'answers/_new'%>
 
-<ul>
-  <% @question.comments.each do |comment| %>
-  <li><%= comment.content %></li>
-  <% end %>
-</ul>
-
-<h2>Answers</h2>
-<ul>
-  <% @question.answers.each do |answer| %>
-
-  <li><%= answer.content  %></li>
-
-  <ul>
-    <% answer.comments.each do |comment| %>
-    <li><%= comment.content %></li>
-    <% end %>
-  </ul>
-
-  <% end %>
-</ul>
 
