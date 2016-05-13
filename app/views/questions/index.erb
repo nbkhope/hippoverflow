@@ -1,0 +1,10 @@
+<% @questions.each do |question| %>
+  <ul>
+    <li>
+      <a href="/questions/<%= question.id %>"><%= question.title %></a>
+      <span><%= question.answers.count %> answers </span>
+      <!-- Number of votes -->
+      <span><%= question.points %> points </span>
+    </li>
+  </ul>
+<% end %>
