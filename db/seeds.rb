@@ -1,5 +1,13 @@
+def get_random_content_array
+	[
+		Faker::Lorem.paragraph,
+		Faker::Lorem.sentences(1..5).join("\n")
+	]
+end
+
 User.delete_all
 Question.delete_all
+Answer.delete_all
 
 # Create users
 40.times do
@@ -21,10 +29,7 @@ end
 		Faker::Hacker.say_something_smart,
 		Faker::Lorem.sentence
 	]
-	random_content = [
-		Faker::Lorem.paragraph,
-		Faker::Lorem.sentences(1..5).join("\n")
-	]
+	random_content = get_random_content_array
 
 	# Create fake question
 	question = Question.new(
@@ -35,3 +40,17 @@ end
 	# Assign question to a random user
 	User.all.sample << question
 end
+
+160.times do
+	answer = Answer.new(
+		content: get_random_content_array.sample
+	)
+
+	# Assign the answer to a random user
+	answer.user = User.all.sample
+
+	# Attach the answer to a random question
+	# (<< operator saves to the DB)
+	Question.all.sample << answer
+end
+
