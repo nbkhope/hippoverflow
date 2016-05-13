@@ -39,18 +39,17 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
+        <li><a href="/questions/new">Ask Question</a></li>
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
       <% if logged_in? %>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Logout</a></li>
+        <li><a href="/users/<%= current_user.id %>">Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
 
         <%else %>
-        <li><a href="#">Register</a></li>
-        <li><a href="#">Login</a></li>
+        <li><a href="/register">Register</a></li>
+        <li><a href="/login">Login</a></li>
       <% end %>
 
 
