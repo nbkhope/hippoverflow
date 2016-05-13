@@ -9,4 +9,11 @@ class Question < ActiveRecord::Base
   # For polymorphic relationships
   has_many :comments, as: :entry
   has_many :votes, as: :entry
+
+  def author
+    self.user.username
+  end
+
+
 end
+
