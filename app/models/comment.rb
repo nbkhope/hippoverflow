@@ -1,3 +1,7 @@
 class Comment < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :user
+
+  # Polymorphic relationship with question or answer (as entry)
+  belongs_to :entry, polymorphic: true
+  #has_many :votes, as: :entry
 end
