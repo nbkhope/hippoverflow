@@ -2,7 +2,7 @@ class CreateComments < ActiveRecord::Migration
   def change
     create_table :comments do |t|
       t.string :content, null: false
-      t.belongs_to :user_id, index: true
+      t.belongs_to :user, index: true
 
       t.integer :entry_id, null: false
       t.string :entry_type, null: false
