@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   include BCrypt
 
+  before_save :add_avatar_url
+
   has_many :questions
   has_many :answers
   has_many :comments
@@ -22,5 +24,9 @@ class User < ActiveRecord::Base
     else
       nil
     end
+  end
+
+  def add_avatar_url
+    self.avatar_url = "/images/default_avatar.jpg" if self.avatar_url.nil?
   end
 end
