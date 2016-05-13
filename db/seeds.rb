@@ -27,9 +27,9 @@ end
 # Create questions
 200.times do
 	random_title = [
-		Faker::Beer.name, 
-		Faker::Book.title, 
-		Faker::Hipster.sentence(3), 
+		Faker::Beer.name,
+		Faker::Book.title,
+		Faker::Hipster.sentence(3),
 		Faker::Hacker.say_something_smart,
 		Faker::Lorem.sentence
 	]
@@ -42,7 +42,7 @@ end
 	)
 
 	# Assign question to a random user
-	User.all.sample << question
+	User.all.sample.questions << question
 end
 
 # Generate fake answers
@@ -56,7 +56,7 @@ end
 
 	# Attach the answer to a random question
 	# (<< operator saves to the DB)
-	Question.all.sample << answer
+	Question.all.sample.answers << answer
 end
 
 # Generate fake comments to questions
@@ -67,7 +67,7 @@ end
 
 	comment.user_id = User.all.sample.id
 	comment.entry_id = Question.all.sample.id
-	comment.entry_type = "Q"
+	comment.entry_type = "Question"
 
 	comment.save
 end
@@ -80,7 +80,7 @@ end
 
 	comment.user = User.all.sample
 	comment.entry = Answer.all.sample
-	comment.entry_type = "A"
+	# comment.entry_type = "Answer"
 
 	comment.save
 end

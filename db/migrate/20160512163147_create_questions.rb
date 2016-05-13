@@ -3,7 +3,7 @@ class CreateQuestions < ActiveRecord::Migration
     create_table :questions do |t|
       t.string :title
       t.string :content
-      t.belongs_to :user_id, index: true
+      t.belongs_to :user, index: true
 
       t.timestamps null: false
     end
