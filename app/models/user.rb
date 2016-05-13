@@ -27,6 +27,6 @@ class User < ActiveRecord::Base
   end
 
   def add_avatar_url
-    self.avatar_url = "/images/default_avatar.jpg"
+    self.avatar_url = "/images/default_avatar.jpg" if self.avatar_url.nil?
   end
 end
