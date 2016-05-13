@@ -1,4 +1,8 @@
+require_relative 'reaction'
+
 class Question < ActiveRecord::Base
+  include Reaction
+
   belongs_to :user
   has_many :answers
 
