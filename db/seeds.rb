@@ -41,6 +41,7 @@ end
 	User.all.sample << question
 end
 
+# Generate fake answers
 160.times do
 	answer = Answer.new(
 		content: get_random_content_array.sample
@@ -54,3 +55,24 @@ end
 	Question.all.sample << answer
 end
 
+# Generate fake comments to questions
+100.times do
+	comment = Comment.new(
+		content: Faker::Lorem.sentence
+	)
+
+	comment.user_id = User.all.sample.id
+	comment.entry_id = Question.all.sample.id
+	comment.entry_type = "Q"
+end
+
+# Generate fake comments to answers
+100.times do
+	comment = Comment.new(
+		content: Faker::Lorem.sentence
+	)
+
+	comment.user = User.all.sample
+	comment.entry = Answer.all.sample
+	comment.entry_type = "A"
+end
