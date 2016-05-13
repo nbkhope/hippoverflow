@@ -31,7 +31,10 @@ end
 
 post '/questions' do
   @user = User.find_by(id: session[:user_id])
-  @user.questions << Question.create(params[:question])
+  question = Question.create(params[:question])
+  @user.questions << question
+
+  redirect "/questions/#{question.id}"
 end
 
 get '/questions/:id' do
