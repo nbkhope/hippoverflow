@@ -1,0 +1,8 @@
+<ul>
+  <% if !@answer.nil? %>
+    <% @answer.comments.each do |comment| %>
+    <li><%= comment.content %></li>
+    <% end %>
+  <% end %>
+</ul>
+
