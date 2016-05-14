@@ -1,8 +1,9 @@
 <h2>Answers</h2>
 <ul>
   <% @question.answers.each do |answer| %>
-<%= erb :'answers/_answer', locals: { answer: answer } %>
-<%= erb :'comments/ashow', locals: { answer: answer }%>
+    <%= erb :'answers/_answer', locals: { answer: answer } %>
+    <h5>Comments</h5>
+    <%= erb :'comments/ashow', locals: { answer: answer } %>
   <% end %>
 </ul>
 

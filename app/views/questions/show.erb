@@ -1,7 +1,28 @@
-<h1><%= @question.title %></h1>
-<div><%= @question.content %></div>
-<div><%= @question.author %></div>
+<ul class="media-list">
+  <li class="media">
+    <div class="media-body">
+      <h2 class="media-heading"><%= @question.title %></h2>
+      <%= @question.content %>
 
+      <form class="form-inline" action="/questions/<%= @question.id %>/vote" method="POST">
+        <input type="hidden" name="vote_type" value="up">
+        <button type="submit"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></button>
+      </form>
+      <span class="badge"><%= @question.points %></span>
+
+      <form class="form-inline" action="/questions/<%= @question.id %>/vote" method="POST">
+        <input type="hidden" name="vote_type" value="down">
+        <button type="submit"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></button>
+      </form>
+
+    </div>
+    <div class="media-right">
+     <div><%= @question.author %></div>
+    </div>
+  </li>
+</ul>
+
+<h5>Comments</h5>
 <%= erb :'comments/qshow'%>
 <%= erb :'answers/show'%>
 <%= erb :'answers/_new'%>

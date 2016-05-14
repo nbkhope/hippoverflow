@@ -1,4 +1,4 @@
-post '/questions/:id/votes' do
+post '/questions/:id/vote' do
   question = Question.find_by(id: params[:id])
 
   case params[:vote_type]
@@ -8,12 +8,14 @@ post '/questions/:id/votes' do
     value = -1
   end
 
-  questions.votes << Vote.new(reaction: value)
+  vote = Vote.new(reaction: value)
+  vote.user = current_user
+  question.votes << vote
 
   if request.xhr?
-    questions.points
+    question.points
   else
-    redirect "/questions/#{questions.id}"
+    redirect "/questions/#{question.id}"
   end
 end
 
@@ -31,7 +33,10 @@ end
 
 post '/questions' do
   @user = User.find_by(id: session[:user_id])
-  @user.questions << Question.create(params[:question])
+  question = Question.create(params[:question])
+  @user.questions << question
+
+  redirect "/questions/#{question.id}"
 end
 
 get '/questions/:id' do
