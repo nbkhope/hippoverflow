@@ -1,8 +1,7 @@
-<center><h1>New Comment</h1></center>
+<center><h4>New Comment</h4></center>
 <center>
   <form action='/answers/<%= answer.id %>/comments' method='post'>
-    <p><textarea rows="5" cols="30" name="comment[content]" maxlength="60">
-    </textarea></p>
+    <input type="text" name="comment[content]">
     <input type='submit' value='Comment On It!'>
   </form>
 </center>
