@@ -2,6 +2,10 @@
 
 Ask about anything
 
+![demo screenshot](public/images/screenshots/question_page.png)
+
+[View more screenshots](public/images/screenshots/)
+
 ## Team
 
 * [Buck Melton](https://github.com/buckmelton)
