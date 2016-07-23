@@ -1,0 +1,11 @@
+<!-- Display all comments -->
+<ul class="list-group">
+  <%= "There are no comments yet. Be the first to add a comment!" if comments.empty? %>
+
+  <% comments.each do |comment| %>
+    <%= erb :'comments/_comment', locals: { comment: comment, item_color: (item_color if defined?(item_color)) } %>
+  <% end %>
+</ul>
+
+<!-- Display form to create new comment -->
+<%= erb :'comments/new', locals: { commentable_action: commentable_action } %>

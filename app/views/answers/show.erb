@@ -1,0 +1,7 @@
+<h2>Answers</h2>
+
+<!-- Display all the answers to the given question -->
+<% @question.answers.each do |answer| %>
+  <!-- Display the answer -->
+  <%= erb :'answers/_answer', locals: { answer: answer } %>
+<% end %>

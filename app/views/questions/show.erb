@@ -1,0 +1,41 @@
+<!-- Display question -->
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h4><%= @question.title %></h4>
+  </div>
+
+  <div class="panel-body">
+    <%= @question.content %>
+
+      <!-- need this row in order for floating elements (the one with pull-right) not to overflow -->
+      <div class="row question-detail">
+        <div class="col-xs-12">
+        <form class="form-inline thumb-button" action="/questions/<%= @question.id %>/vote" method="POST">
+          <input type="hidden" name="vote_type" value="up">
+          <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></button>
+        </form>
+
+        <form class="form-inline thumb-button" action="/questions/<%= @question.id %>/vote" method="POST">
+          <input type="hidden" name="vote_type" value="down">
+          <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></button>
+        </form>
+
+        <span class="badge"><%= @question.points %></span>
+
+        <div class="pull-right">
+         Asked by <a href="/users/<%= @question.user.id %>"><%= @question.author %></a>
+        </div>
+      </div>
+      </div>
+
+    <div class="comment-area-separator-question">&nbsp;</div>
+
+    <!-- Display comments about the question itself -->
+    <h5 class="text-center">Comments about this question:</h5>
+    <%= erb :'comments/index', locals: { comments: @question.comments,  commentable_action: "/questions/#{@question.id}/comments" } %>
+  </div>
+</div>
+
+<!-- Display the answers to the question -->
+<%= erb :'answers/show'%>
+<%= erb :'answers/_new'%>

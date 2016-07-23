@@ -1,0 +1,27 @@
+<div class="col-xs-12">
+  <div class="text-center">
+    <img class="img-responsive img-thumbnail img-circle" src="<%= @user.avatar_url %>" width="200px">
+    <h1><%= @user.username %></h1>
+  </div>
+</div>
+
+<div class="col-xs-12">
+  <div class="text-center">
+    <a class="btn btn-danger" href="#"># Q's: <%=@user.questions.length%></a>
+    <a class="btn btn-danger" href="#"># A's: <%=@user.answers.length%></a>
+  </div>
+</div>
+
+<div class="col-xs-12">
+  <h3>Top Questions</h3>
+  <% @user.questions.each do |question| %>
+<div class="media">
+  <div class="media-left">
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><a href="/questions/<%=question.id%>"><%= question.title %></a></h4>
+  </div>
+</div>
+
+  <%end %>
+</div>

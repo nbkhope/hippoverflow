@@ -1,0 +1,10 @@
+
+<div class="well">
+  <%= answer.content  %> -- <a href="/users/<%= answer.user.id %>"><%= answer.user.username %></a>
+
+  <div class="comment-area-separator-answer">&nbsp;</div>
+
+  <!-- Display all the comments for that specific answer -->
+  <h5>Comments</h5>
+  <%= erb :'comments/index', locals: { comments: answer.comments,  commentable_action: "/answers/#{answer.id}/comments", item_color: "list-group-item-info" } %>
+</div>

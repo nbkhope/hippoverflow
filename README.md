@@ -2,12 +2,16 @@
 
 Ask about anything
 
+![demo screenshot](public/images/screenshots/question_page.png)
+
+[View more screenshots](public/images/screenshots/)
+
 ## Team
 
-Buck Melton [@buckmelton](https://github.com/buckmelton)
-Lyudmila Arinich [@ftBessmann](https://github.com/ftBessmann)
-Jonathan Nicolas [@jonathanNicolas](https://github.com/jonathanNicolas)
-Renan Martins [@nbkhope](https://github.com/nbkhope)
+* [Buck Melton](https://github.com/buckmelton)
+* [Jonathan Nicolas](https://github.com/jonathanNicolas)
+* [Lyudmila Arinich](https://github.com/ftBessmann)
+* [Renan Martins](https://github.com/nbkhope)
 
 ## MVP Features
 
@@ -28,3 +32,29 @@ A user can list all the responses in chronological order
 A user will see the best answer first, followed by the most highly voted
 A user can list all the questions ordered by highest voted, most recent, or "trending"
 ```
+
+## Database Schema
+
+![db schema](schema.png)
+
+## Installation
+
+Run bundle to install all dependencies:
+
+```
+bundle install
+```
+
+Create, migrate, and seed the database using rake:
+
+```
+bundle exec rake db:create db:migrate db:seed
+```
+
+Run the server using shotgun:
+
+```
+bundle exec shotgun config.ru
+```
+
+The web app will be available at <http://localhost:9393>
