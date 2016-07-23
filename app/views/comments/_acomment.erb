@@ -1,7 +1,0 @@
-<ul>
-  <% if !answer.nil? %>
-    <% answer.comments.each do |comment| %>
-    <li><%= comment.content %> -- <%= comment.user.username %></li>
-    <% end %>
-  <% end %>
-</ul>
