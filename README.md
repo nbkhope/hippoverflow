@@ -4,10 +4,10 @@ Ask about anything
 
 ## Team
 
-Buck Melton [@buckmelton](https://github.com/buckmelton)
-Lyudmila Arinich [@ftBessmann](https://github.com/ftBessmann)
-Jonathan Nicolas [@jonathanNicolas](https://github.com/jonathanNicolas)
-Renan Martins [@nbkhope](https://github.com/nbkhope)
+* [Buck Melton](https://github.com/buckmelton)
+* [Jonathan Nicolas](https://github.com/jonathanNicolas)
+* [Lyudmila Arinich](https://github.com/ftBessmann)
+* [Renan Martins](https://github.com/nbkhope)
 
 ## MVP Features
 
