@@ -32,3 +32,25 @@ A user can list all the questions ordered by highest voted, most recent, or "tre
 ## Database Schema
 
 ![db schema](schema.png)
+
+## Installation
+
+Run bundle to install all dependencies:
+
+```
+bundle install`
+```
+
+Create, migrate, and seed the database using rake:
+
+```
+bundle exec rake db:create db:migrate db:seed
+```
+
+Run the server using shotgun:
+
+```
+bundle exec shotgun config.ru
+```
+
+The web app will be available at <http://localhost:9393>
