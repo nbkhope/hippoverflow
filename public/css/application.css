@@ -1,3 +1,21 @@
 .site-header {
   background-image: url("/images/background.jpg");
 }
+
+.thumb-button {
+  display: inline-block;
+}
+
+.comment-area-separator-question {
+  margin-top: 12px;
+  border-bottom: 2px solid #337ab7;
+}
+
+.comment-area-separator-answer {
+  margin-top: 12px;
+  border-bottom: 2px solid #e3e3e3;
+}
+
+.question-detail {
+  margin-top: 12px;
+}
