@@ -28,3 +28,7 @@ A user can list all the responses in chronological order
 A user will see the best answer first, followed by the most highly voted
 A user can list all the questions ordered by highest voted, most recent, or "trending"
 ```
+
+## Database Schema
+
+![db schema](schema.png)
