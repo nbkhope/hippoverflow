@@ -20,7 +20,7 @@ post '/questions/:id/vote' do
 end
 
 get '/questions' do
-  @questions = Question.all
+  @questions = Question.order(created_at: :desc)
 
   erb :'questions/index'
 end
@@ -33,7 +33,8 @@ end
 
 post '/questions' do
   @user = User.find_by(id: session[:user_id])
-  question = Question.create(params[:question])
+  question = Question.new(params[:question])
+  question.user = @user
   @user.questions << question
 
   redirect "/questions/#{question.id}"
