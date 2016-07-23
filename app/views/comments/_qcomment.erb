@@ -6,10 +6,9 @@
         </div>
         <div class="media-body">
           <!--<h4 class="media-heading">Media heading</h4>-->
-          <%= comment.content %>
+          <%= comment.content %> -- <a href="/users/<%= comment.user.id%>"><%= comment.user.username %></a>
         </div>
       </li>
 
     <% end %>
 </ul>
-
