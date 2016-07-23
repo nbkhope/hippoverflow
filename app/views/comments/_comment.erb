@@ -1,0 +1,3 @@
+<li class="list-group-item<%= " #{item_color}" if defined?(item_color) %>">
+  <%= comment.content %> -- <a href="/users/<%= comment.user.id %>"><%= comment.user.username %></a>
+</li>

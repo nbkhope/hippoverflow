@@ -7,7 +7,11 @@ post '/questions/:id/answers' do
   answer = Answer.new(params[:answer])
   answer.question = @question
   answer.user = current_user
-  @question.answers << answer
-
-  redirect "/questions/#{@question.id}"
+  # @question.answers << answer
+  if answer.save
+    redirect "/questions/#{@question.id}"
+  else
+    # could not save answer
+    erb :'questions/show'
+  end
 end

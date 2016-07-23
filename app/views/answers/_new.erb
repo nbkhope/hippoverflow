@@ -1,8 +1,8 @@
-<center><h1>New Answer</h1></center>
-<center>
-  <form action='/questions/<%= @question.id %>/answers' method='post'>
-    <p><textarea rows="5" cols="50" name="answer[content]" maxlength="140">
-    </textarea></p>
-    <input type='submit' value='Answer It!'>
-  </form>
-</center>
+<h1>New Answer</h1>
+
+<form class="form-horizontal" action='/questions/<%= @question.id %>/answers' method='post'>
+  <div class="form-group">
+    <textarea class="form-control" rows="5" cols="50" name="answer[content]"></textarea>
+  </div>
+<button class="btn btn-success" type='submit'>Answer It!</button>
+</form>
