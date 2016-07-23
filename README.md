@@ -38,7 +38,7 @@ A user can list all the questions ordered by highest voted, most recent, or "tre
 Run bundle to install all dependencies:
 
 ```
-bundle install`
+bundle install
 ```
 
 Create, migrate, and seed the database using rake:
